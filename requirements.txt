@@ -1,0 +1,19 @@
+# MyDearElysia 项目依赖
+# 注意：GPT-SoVITS 的依赖在 GPT_SoVITS/requirements.txt 中
+
+# 语音识别
+faster-whisper>=1.0.0
+noisereduce>=3.0.0
+pyloudnorm>=0.1.1
+
+# AI对话
+openai>=1.0.0
+
+# 音频处理
+sounddevice>=0.4.6
+soundfile>=0.12.1
+numpy<2.0
+pynput>=1.7.6
+
+# UI
+PyQt6>=6.5.0

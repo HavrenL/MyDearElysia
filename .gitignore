@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 本地运行产物
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+.next/
+
+# 模型权重（保留目录结构，不上传模型文件）
+weights/**/*.pth
+weights/**/*.ckpt
+weights/**/*.pt
+weights/**/*.safetensors
+whisper_models/**/*.bin
+whisper_models/**/*.pt
+whisper_models/**/*.onnx
+whisper_models/**/*.pb
+whisper_models/.locks/
+
+# 参考音频（保留目录结构，不上传音频文件）
+reference_audio/*.wav
+
+# 日志内容不上传（保留 logs 目录结构）
+logs/*.log
+logs/*.log.*
+
+# FFmpeg（可以从官网下载）
+ffmpeg/
+
+# AI 辅助工具（个人配置，不上传）
+.agents/
+.github/
+.memories/
+skills-lock.json
+
+# IDE
+.vscode/
+.idea/
+
+# 配置模板（app.json 已脱敏，但保留在本地不上传）
+config/app.json
+
+# 系统
+.DS_Store
+Thumbs.db

@@ -1,0 +1,93 @@
+{
+  "transcriber": {
+    "model_path": "whisper_models/faster-whisper-large-v3",
+    "language": "zh",
+    "sample_rate": 16000,
+    "device": "cuda",
+    "compute_type": "float16",
+    "chunk_size": 1024,
+    "beam_size": 5,
+    "min_audio_duration": 0.3,
+    "vad": {
+      "threshold": 0.68,
+      "min_speech_duration_ms": 400,
+      "max_speech_duration_s": 10,
+      "min_silence_duration_ms": 700,
+      "speech_pad_ms": 300
+    }
+  },
+  "dialog": {
+    "api_key": "sk-your-api-key-here",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-v4-flash",
+    "max_rounds": 7,
+    "temperature": 1.0,
+    "max_tokens": 1024,
+    "character": "elysia"
+  },
+  "tts": {
+    "server_url": "http://127.0.0.1:9880",
+    "ref_audio_path": "",
+    "ref_audio_text": "",
+    "ref_audio_lang": "zh",
+    "text_lang": "zh",
+    "top_k": 5,
+    "top_p": 1,
+    "temperature": 1,
+    "text_split_method": "cut5",
+    "speed_factor": 1.0,
+    "media_type": "wav",
+    "parallel_infer": true,
+    "batch_size": 1,
+    "batch_threshold": 0.75,
+    "split_bucket": true,
+    "fragment_interval": 0.3,
+    "streaming_mode": false,
+    "repetition_penalty": 1.35,
+    "request_timeout": 60,
+    "stream_chunk_size": 1024
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "loudness_target": -20.0,
+    "noise_sample_ratio": 0.5,
+    "noise_sample_duration": 0.2,
+    "denoise_stationary": true,
+    "denoise_strength": 0.9
+  },
+  "reference": {
+    "top_n": 3,
+    "score_threshold": 0.05,
+    "fallback_emotion": "开心",
+    "emotion_aliases": {
+      "开心": ["开心", "高兴", "快乐", "欣喜", "愉快", "欢快"],
+      "撒娇": ["撒娇", "娇嗔", "娇羞", "软萌"],
+      "调皮": ["调皮", "俏皮", "搞怪", "顽皮", "淘气"],
+      "感动": ["感动", "温柔", "暖心", "深情", "真挚", "温馨"],
+      "难过": ["难过", "伤感", "悲伤", "失落", "忧伤", "落寞"],
+      "撩拨": ["撩拨", "撩人", "挑逗"],
+      "普通": ["普通", "平静", "日常", "平淡"],
+      "惊喜": ["惊喜", "惊讶", "意外", "震惊"],
+      "尴尬": ["尴尬", "窘迫", "难为情"],
+      "生气": ["生气", "气恼", "不满", "恼怒"],
+      "疲惫": ["疲惫", "倦怠", "疲倦", "无力"],
+      "积极": ["积极", "鼓励", "鼓舞", "激励"],
+      "疑问": ["疑问", "困惑", "不解", "好奇"],
+      "调侃的失望": ["调侃的失望", "失望", "假装生气"]
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file_level": "DEBUG",
+    "console_format": "[%(asctime)s] %(levelname)-5s | %(module_name)-12s | %(message)s",
+    "console_datefmt": "%H:%M:%S",
+    "file_format": "[%(asctime)s] %(levelname)-8s | %(module_name)-20s | %(message)s",
+    "dir": "logs",
+    "filename": "app.log",
+    "max_bytes": 5242880,
+    "backup_count": 5
+  },
+  "hotkey": {
+    "record_key": "space"
+  }
+}
